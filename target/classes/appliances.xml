@@ -146,7 +146,7 @@
         <displayInches>14</displayInches>
         <memoryRom>4</memoryRom>
         <flashMemoryCapacity>2</flashMemoryCapacity>
-        <color>blue</color>
+        <color>green</color>
         <price>40.5</price>
     </tabletPC>
     <tabletPC>
@@ -186,4 +186,16 @@
         <cordLength>4</cordLength>
         <price>40.5</price>
     </speakers>
+    <kettle>
+        <powerConsumption>50</powerConsumption>
+        <waterCapacity>110</waterCapacity>
+        <color>green</color>
+        <price>10</price>
+    </kettle>
+    <kettle>
+        <powerConsumption>41</powerConsumption>
+        <waterCapacity>95</waterCapacity>
+        <color>blue</color>
+        <price>15</price>
+    </kettle>
 </appliances>

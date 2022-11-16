@@ -21,6 +21,7 @@ public class ApplianceCreatorFactory {
         creators.put("vacuumCleaner", new VacuumCleanerCreator());
         creators.put("tabletPC", new TabletPCCreator());
         creators.put("speakers", new SpeakersCreator());
+        creators.put("kettle", new KettleCreator());
     }
 
     /**

@@ -27,7 +27,7 @@ public class Main {
         ////////////////////OVENS WITH FIXED CAPACITY////////////////////////////////
 
         Criteria criteriaOven = new Criteria(SearchCriteria.Oven.class.getSimpleName());
-        criteriaOven.add(SearchCriteria.Oven.CAPACITY.toString(), 3);
+        criteriaOven.add(SearchCriteria.Oven.CAPACITY.toString(), 33);
 
         List<Appliance> appliances = service.find(criteriaOven);
 
@@ -44,11 +44,11 @@ public class Main {
 
         PrintApplianceInfo.print(appliances);
 
-        ////////////////////ALL OVENS//////////////////////////////////////////////
+        ////////////////////ALL KETTLES////////////////////////////////////////////
 
-        criteriaOven = new Criteria(SearchCriteria.Oven.class.getSimpleName());
+        Criteria kettleCriteria = new Criteria(SearchCriteria.Kettle.class.getSimpleName());
 
-        appliances = service.find(criteriaOven);
+        appliances = service.find(kettleCriteria);
 
         PrintApplianceInfo.print(appliances);
 

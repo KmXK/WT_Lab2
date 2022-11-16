@@ -58,5 +58,12 @@ public final class SearchCriteria {
     public enum Speakers {
         POWER_CONSUMPTION, NUMBER_OF_SPEAKERS, FREQUENCY_RANGE, CORD_LENGTH
     }
+
+    /**
+     * Searches by Kettle fields.
+     */
+    public enum Kettle {
+        POWER_CONSUMPTION, WATER_CAPACITY, COLOR
+    }
 }
 
