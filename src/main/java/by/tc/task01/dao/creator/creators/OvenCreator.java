@@ -9,7 +9,7 @@ import org.w3c.dom.NodeList;
 /**
  * Represents creator of a oven appliance.
  */
-public class OvenCreator implements ApplianceCreator {
+public class OvenCreator extends ApplianceCreatorBase<Oven> {
     private static final String POWER_CONSUMPTION = "powerConsumption";
     private static final String WEIGHT = "weight";
     private static final String CAPACITY = "capacity";
@@ -21,23 +21,23 @@ public class OvenCreator implements ApplianceCreator {
      * {@inheritDoc}
      */
     @Override
-    public Appliance create(NodeList nodes) {
-        Oven oven = new Oven();
+    protected Oven getInstance() {
+        return new Oven();
+    }
 
-        for (int i = 0; i < nodes.getLength(); i++) {
-            if (nodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                String text = nodes.item(i).getTextContent();
-                switch (nodes.item(i).getNodeName()) {
-                    case POWER_CONSUMPTION -> oven.powerConsumption = Integer.parseInt(text);
-                    case WEIGHT -> oven.weight = Integer.parseInt(text);
-                    case CAPACITY -> oven.capacity = Integer.parseInt(text);
-                    case DEPTH -> oven.depth = Integer.parseInt(text);
-                    case HEIGHT -> oven.height = Double.parseDouble(text);
-                    case WIDTH -> oven.width = Double.parseDouble(text);
-                    default -> throw new IllegalArgumentException("Invalid appliance's attribute.");
-                }
-            }
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void parse(Oven entity, String key, String value) {
+        switch (key) {
+            case POWER_CONSUMPTION -> entity.powerConsumption = Integer.parseInt(value);
+            case WEIGHT -> entity.weight = Integer.parseInt(value);
+            case CAPACITY -> entity.capacity = Integer.parseInt(value);
+            case DEPTH -> entity.depth = Integer.parseInt(value);
+            case HEIGHT -> entity.height = Double.parseDouble(value);
+            case WIDTH -> entity.width = Double.parseDouble(value);
+            default -> throw new IllegalArgumentException("Invalid appliance's attribute.");
         }
-        return oven;
     }
 }

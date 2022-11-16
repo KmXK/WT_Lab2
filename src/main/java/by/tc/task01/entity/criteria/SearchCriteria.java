@@ -4,6 +4,13 @@ package by.tc.task01.entity.criteria;
  * Encapsulates all constants associated with search criteria.
  */
 public final class SearchCriteria {
+    /*
+     * Searches by common fields.
+     */
+    public enum Common {
+        PRICE
+    }
+
     /**
      * Searches by oven fields.
      */

@@ -13,8 +13,8 @@ public class Speakers extends Appliance {
 
     @Override
     public String toString() {
-        return String.format("Speakers : POWER_CONSUMPTION=%d, NUMBER_OF_SPEAKERS=%d, FREQUENCY_RANGE=%s, CORD_LENGTH=%d",
-                powerConsumption, numberOfSpeakers, frequencyRange, cordLength);
+        return String.format("Speakers : PRICE=%.2f, OWER_CONSUMPTION=%d, NUMBER_OF_SPEAKERS=%d, FREQUENCY_RANGE=%s, CORD_LENGTH=%d",
+                price, powerConsumption, numberOfSpeakers, frequencyRange, cordLength);
     }
 
     /**
@@ -27,6 +27,7 @@ public class Speakers extends Appliance {
             case NUMBER_OF_SPEAKERS -> numberOfSpeakers == (Integer) value;
             case FREQUENCY_RANGE -> frequencyRange.equals(value);
             case CORD_LENGTH -> cordLength == (Integer) value;
+            default -> super.matches(key, value);
         };
     }
 }

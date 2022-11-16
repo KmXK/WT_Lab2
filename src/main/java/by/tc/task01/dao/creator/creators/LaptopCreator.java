@@ -9,8 +9,7 @@ import org.w3c.dom.NodeList;
 /**
  * Represents creator of a laptop appliance.
  */
-public class LaptopCreator implements ApplianceCreator {
-
+public class LaptopCreator extends ApplianceCreatorBase<Laptop> {
     private static final String BATTERY_CAPACITY = "batteryCapacity";
     private static final String OS = "os";
     private static final String MEMORY_ROM = "memoryRom";
@@ -22,23 +21,23 @@ public class LaptopCreator implements ApplianceCreator {
      * {@inheritDoc}
      */
     @Override
-    public Appliance create(NodeList nodes) {
-        Laptop laptop = new Laptop();
+    protected Laptop getInstance() {
+        return new Laptop();
+    }
 
-        for (int i = 0; i < nodes.getLength(); i++) {
-            if (nodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                String text = nodes.item(i).getTextContent();
-                switch (nodes.item(i).getNodeName()) {
-                    case BATTERY_CAPACITY -> laptop.batteryCapacity = Double.parseDouble(text);
-                    case OS -> laptop.os = text;
-                    case MEMORY_ROM -> laptop.memoryRom = Integer.parseInt(text);
-                    case SYSTEM_MEMORY -> laptop.systemMemory = Integer.parseInt(text);
-                    case CPU -> laptop.cpu = Double.parseDouble(text);
-                    case DISPLAY_INCHS -> laptop.displayInches = Integer.parseInt(text);
-                    default -> throw new IllegalArgumentException("No such appliance exists");
-                }
-            }
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void parse(Laptop entity, String key, String value) {
+        switch (key) {
+            case BATTERY_CAPACITY -> entity.batteryCapacity = Double.parseDouble(value);
+            case OS -> entity.os = value;
+            case MEMORY_ROM -> entity.memoryRom = Integer.parseInt(value);
+            case SYSTEM_MEMORY -> entity.systemMemory = Integer.parseInt(value);
+            case CPU -> entity.cpu = Double.parseDouble(value);
+            case DISPLAY_INCHS -> entity.displayInches = Integer.parseInt(value);
+            default -> throw new IllegalArgumentException("Invalid appliance's attribute.");
         }
-        return laptop;
     }
 }

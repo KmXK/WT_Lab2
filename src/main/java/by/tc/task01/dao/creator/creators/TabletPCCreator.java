@@ -1,16 +1,12 @@
 package by.tc.task01.dao.creator.creators;
 
-import by.tc.task01.dao.creator.ApplianceCreator;
-import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.TabletPC;
 import by.tc.task01.entity.enums.ColorType;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 /**
  * Represents creator of a tabletPC appliance.
  */
-public class TabletPCCreator implements ApplianceCreator {
+public class TabletPCCreator extends ApplianceCreatorBase<TabletPC> {
     private static final String BATTERY_CAPACITY = "batteryCapacity";
     private static final String DISPLAY_INCHES = "displayInches";
     private static final String MEMORY_ROM = "memoryRom";
@@ -21,22 +17,22 @@ public class TabletPCCreator implements ApplianceCreator {
      * {@inheritDoc}
      */
     @Override
-    public Appliance create(NodeList nodes) {
-        TabletPC tabletPC = new TabletPC();
+    protected TabletPC getInstance() {
+        return new TabletPC();
+    }
 
-        for (int i = 0; i < nodes.getLength(); i++) {
-            if (nodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                String text = nodes.item(i).getTextContent();
-                switch (nodes.item(i).getNodeName()) {
-                    case BATTERY_CAPACITY -> tabletPC.batteryCapacity = Integer.parseInt(text);
-                    case DISPLAY_INCHES -> tabletPC.displayInches = Integer.parseInt(text);
-                    case MEMORY_ROM -> tabletPC.memoryRom = Integer.parseInt(text);
-                    case FLASH_MEMORY_CAPACITY -> tabletPC.flashMemoryCapacity = Integer.parseInt(text);
-                    case COLOR -> tabletPC.color = ColorType.valueOf(text.toUpperCase());
-                    default -> throw new IllegalArgumentException("No such appliance exists");
-                }
-            }
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void parse(TabletPC entity, String key, String value) {
+        switch (key) {
+            case BATTERY_CAPACITY -> entity.batteryCapacity = Integer.parseInt(value);
+            case DISPLAY_INCHES -> entity.displayInches = Integer.parseInt(value);
+            case MEMORY_ROM -> entity.memoryRom = Integer.parseInt(value);
+            case FLASH_MEMORY_CAPACITY -> entity.flashMemoryCapacity = Integer.parseInt(value);
+            case COLOR -> entity.color = ColorType.valueOf(value.toUpperCase());
+            default -> throw new IllegalArgumentException("Invalid appliance's attribute.");
         }
-        return tabletPC;
     }
 }

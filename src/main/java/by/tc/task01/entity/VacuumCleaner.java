@@ -16,8 +16,8 @@ public class VacuumCleaner extends Appliance {
 
     @Override
     public String toString() {
-        return String.format("VacuumCleaner : POWER_CONSUMPTION=$d, FILTER_TYPE=%c, BAG_TYPE=%s, WAND_TYPE=%s, MOTOR_SPEED_REGULATION=%d, CLEANING_WIDTH=%d",
-                powerConsumption, filterType.toString(), bagType, wandType, motorSpeedRegulation, cleaningWidth);
+        return String.format("VacuumCleaner : PRICE=%.2f, POWER_CONSUMPTION=$d, FILTER_TYPE=%c, BAG_TYPE=%s, WAND_TYPE=%s, MOTOR_SPEED_REGULATION=%d, CLEANING_WIDTH=%d",
+                price, powerConsumption, filterType.toString(), bagType, wandType, motorSpeedRegulation, cleaningWidth);
     }
 
     /**
@@ -32,6 +32,7 @@ public class VacuumCleaner extends Appliance {
             case WAND_TYPE -> wandType.equals(value);
             case MOTOR_SPEED_REGULATION -> motorSpeedRegulation == (Integer) value;
             case CLEANING_WIDTH -> cleaningWidth == (Integer) value;
+            default -> super.matches(key, value);
         };
     }
 }

@@ -15,8 +15,8 @@ public class Refrigerator extends Appliance {
 
     @Override
     public String toString() {
-        return String.format("Refrigerator : POWER_CONSUMPTION=%d, WEIGHT=%d, FREEZER_CAPACITY=%d, OVERALL_CAPACITY=%.1f, HEIGHT=%.1f, WIDTH=%.1f",
-                powerConsumption, weight, freezerCapacity, overallCapacity, height, width);
+        return String.format("Refrigerator : PRICE=%.2f, POWER_CONSUMPTION=%d, WEIGHT=%d, FREEZER_CAPACITY=%d, OVERALL_CAPACITY=%.1f, HEIGHT=%.1f, WIDTH=%.1f",
+                price, powerConsumption, weight, freezerCapacity, overallCapacity, height, width);
     }
 
     /**
@@ -31,6 +31,7 @@ public class Refrigerator extends Appliance {
             case OVERALL_CAPACITY -> overallCapacity == Double.parseDouble(String.valueOf(value));
             case HEIGHT -> height == Double.parseDouble(String.valueOf(value));
             case WIDTH -> width == Double.parseDouble(String.valueOf(value));
+            default -> super.matches(key, value);
         };
     }
 }

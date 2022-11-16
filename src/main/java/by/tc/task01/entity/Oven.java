@@ -15,8 +15,8 @@ public class Oven extends Appliance {
 
     @Override
     public String toString() {
-        return String.format("Oven : POWER_CONSUMPTION=%d, WEIGHT=%d, CAPACITY=%d, DEPTH=%d, HEIGHT=%.1f, WIDTH=%.1f",
-                powerConsumption, weight, capacity, depth, height, width);
+        return String.format("Oven : PRICE=%.2f, POWER_CONSUMPTION=%d, WEIGHT=%d, CAPACITY=%d, DEPTH=%d, HEIGHT=%.1f, WIDTH=%.1f",
+                price, powerConsumption, weight, capacity, depth, height, width);
     }
 
     /**
@@ -31,6 +31,7 @@ public class Oven extends Appliance {
             case DEPTH -> depth == (Integer) value;
             case HEIGHT -> height == Double.parseDouble(String.valueOf(value));
             case WIDTH -> width == Double.parseDouble(String.valueOf(value));
+            default -> super.matches(key, value);
         };
     }
 }

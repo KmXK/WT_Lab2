@@ -15,8 +15,8 @@ public class TabletPC extends Appliance {
 
     @Override
     public String toString() {
-        return String.format("TabletPC : BATTERY_CAPACITY=%d, DISPLAY_INCHES=%d, MEMORY_ROM=%d, FLASH_MEMORY_CAPACITY=%d, COLOR=%s",
-                batteryCapacity, displayInches, memoryRom, flashMemoryCapacity, color.toString());
+        return String.format("TabletPC : PRICE=%.2f, BATTERY_CAPACITY=%d, DISPLAY_INCHES=%d, MEMORY_ROM=%d, FLASH_MEMORY_CAPACITY=%d, COLOR=%s",
+                price, batteryCapacity, displayInches, memoryRom, flashMemoryCapacity, color.toString());
     }
 
     /**
@@ -30,6 +30,7 @@ public class TabletPC extends Appliance {
             case MEMORY_ROM -> memoryRom == (Integer) value;
             case FLASH_MEMORY_CAPACITY -> flashMemoryCapacity == (Integer) value;
             case COLOR -> color == ColorType.valueOf((String) value);
+            default -> super.matches(key, value);
         };
     }
 }

@@ -6,6 +6,7 @@
         <depth>60</depth>
         <height>45.5</height>
         <width>59.5</width>
+        <price>40.5</price>
     </oven>
     <oven>
         <powerConsumption>1500</powerConsumption>
@@ -14,6 +15,7 @@
         <depth>60</depth>
         <height>45</height>
         <width>68</width>
+        <price>61.3</price>
     </oven>
     <oven>
         <powerConsumption>2000</powerConsumption>
@@ -22,6 +24,7 @@
         <depth>60</depth>
         <height>40</height>
         <width>70</width>
+        <price>50.5</price>
     </oven>
     <oven>
         <powerConsumption>2000</powerConsumption>
@@ -30,6 +33,7 @@
         <depth>300</depth>
         <height>200</height>
         <width>300</width>
+        <price>70.5</price>
     </oven>
     <oven>
         <powerConsumption>2000</powerConsumption>
@@ -38,6 +42,7 @@
         <depth>3000</depth>
         <height>200</height>
         <width>3000</width>
+        <price>40.5</price>
     </oven>
     <laptop>
         <batteryCapacity>1</batteryCapacity>
@@ -46,6 +51,7 @@
         <systemMemory>1000</systemMemory>
         <cpu>1.2</cpu>
         <displayInchs>18</displayInchs>
+        <price>40.5</price>
     </laptop>
     <laptop>
         <batteryCapacity>1.5</batteryCapacity>
@@ -54,6 +60,7 @@
         <systemMemory>1000</systemMemory>
         <cpu>2.2</cpu>
         <displayInchs>19</displayInchs>
+        <price>40.5</price>
     </laptop>
     <laptop>
         <batteryCapacity>3</batteryCapacity>
@@ -62,6 +69,7 @@
         <systemMemory>1500</systemMemory>
         <cpu>3.2</cpu>
         <displayInchs>22</displayInchs>
+        <price>40.5</price>
     </laptop>
     <refrigerator>
         <powerConsumption>100</powerConsumption>
@@ -70,6 +78,7 @@
         <overallCapacity>300</overallCapacity>
         <height>200</height>
         <width>70</width>
+        <price>40.5</price>
     </refrigerator>
     <refrigerator>
         <powerConsumption>200</powerConsumption>
@@ -78,6 +87,7 @@
         <overallCapacity>300</overallCapacity>
         <height>180</height>
         <width>80</width>
+        <price>40.5</price>
     </refrigerator>
     <refrigerator>
         <powerConsumption>150</powerConsumption>
@@ -86,6 +96,7 @@
         <overallCapacity>350.5</overallCapacity>
         <height>250</height>
         <width>75</width>
+        <price>40.5</price>
     </refrigerator>
     <vacuumCleaner>
         <powerConsumption>100</powerConsumption>
@@ -94,6 +105,7 @@
         <wandType>all-in-one</wandType>
         <motorSpeedRegulation>3000</motorSpeedRegulation>
         <cleaningWidth>20</cleaningWidth>
+        <price>40.5</price>
     </vacuumCleaner>
     <vacuumCleaner>
         <powerConsumption>110</powerConsumption>
@@ -102,6 +114,7 @@
         <wandType>all-in-one</wandType>
         <motorSpeedRegulation>2900</motorSpeedRegulation>
         <cleaningWidth>25</cleaningWidth>
+        <price>40.5</price>
     </vacuumCleaner>
     <vacuumCleaner>
         <powerConsumption>90</powerConsumption>
@@ -110,6 +123,7 @@
         <wandType>all-in-one</wandType>
         <motorSpeedRegulation>2950</motorSpeedRegulation>
         <cleaningWidth>30</cleaningWidth>
+        <price>40.5</price>
     </vacuumCleaner>
     <tabletPC>
         <batteryCapacity>3</batteryCapacity>
@@ -117,6 +131,7 @@
         <memoryRom>8000</memoryRom>
         <flashMemoryCapacity>2</flashMemoryCapacity>
         <color>blue</color>
+        <price>40.5</price>
     </tabletPC>
     <tabletPC>
         <batteryCapacity>3</batteryCapacity>
@@ -124,6 +139,7 @@
         <memoryRom>4</memoryRom>
         <flashMemoryCapacity>2</flashMemoryCapacity>
         <color>blue</color>
+        <price>40.5</price>
     </tabletPC>
     <tabletPC>
         <batteryCapacity>555</batteryCapacity>
@@ -131,6 +147,7 @@
         <memoryRom>4</memoryRom>
         <flashMemoryCapacity>2</flashMemoryCapacity>
         <color>blue</color>
+        <price>40.5</price>
     </tabletPC>
     <tabletPC>
         <batteryCapacity>4</batteryCapacity>
@@ -138,6 +155,7 @@
         <memoryRom>8000</memoryRom>
         <flashMemoryCapacity>6</flashMemoryCapacity>
         <color>red</color>
+        <price>40.5</price>
     </tabletPC>
     <tabletPC>
         <batteryCapacity>5</batteryCapacity>
@@ -145,23 +163,27 @@
         <memoryRom>16000</memoryRom>
         <flashMemoryCapacity>8</flashMemoryCapacity>
         <color>green</color>
+        <price>40.5</price>
     </tabletPC>
     <speakers>
         <powerConsumption>15</powerConsumption>
         <numberOfSpeakers>2</numberOfSpeakers>
         <frequencyRange>2-4</frequencyRange>
         <cordLength>2</cordLength>
+        <price>40.5</price>
     </speakers>
     <speakers>
         <powerConsumption>20</powerConsumption>
         <numberOfSpeakers>3</numberOfSpeakers>
         <frequencyRange>3-4</frequencyRange>
         <cordLength>3</cordLength>
+        <price>40.5</price>
     </speakers>
     <speakers>
         <powerConsumption>17</powerConsumption>
         <numberOfSpeakers>4</numberOfSpeakers>
         <frequencyRange>2-3.5</frequencyRange>
         <cordLength>4</cordLength>
+        <price>40.5</price>
     </speakers>
 </appliances>

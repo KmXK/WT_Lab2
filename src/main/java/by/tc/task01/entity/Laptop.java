@@ -15,8 +15,8 @@ public class Laptop extends Appliance {
 
     @Override
     public String toString() {
-        return String.format("Laptop: BATTERY_CAPACITY=%.1f, OS=%s, MEMORY_ROM=%d, SYSTEM_MEMORY=%d, CPU=%.1f, DISPLAY_INCHS=%d",
-                batteryCapacity, os, memoryRom, systemMemory, cpu, displayInches);
+        return String.format("Laptop: PRICE=%.2f, BATTERY_CAPACITY=%.1f, OS=%s, MEMORY_ROM=%d, SYSTEM_MEMORY=%d, CPU=%.1f, DISPLAY_INCHS=%d",
+                price, batteryCapacity, os, memoryRom, systemMemory, cpu, displayInches);
     }
 
     /**
@@ -31,6 +31,7 @@ public class Laptop extends Appliance {
             case SYSTEM_MEMORY -> systemMemory == (Integer) value;
             case CPU -> cpu == Double.parseDouble(String.valueOf(value));
             case DISPLAY_INCHS -> displayInches == (Integer) value;
+            default -> super.matches(key, value);
         };
     }
 }
