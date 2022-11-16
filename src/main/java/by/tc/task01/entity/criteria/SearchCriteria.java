@@ -4,6 +4,12 @@ package by.tc.task01.entity.criteria;
  * Encapsulates all constants associated with search criteria.
  */
 public final class SearchCriteria {
+    /**
+     * Private constructor to remove the ability of instantiating search criteria.
+     */
+    private SearchCriteria() {
+    }
+
     /*
      * Searches by common fields.
      */
@@ -51,12 +57,6 @@ public final class SearchCriteria {
      */
     public enum Speakers {
         POWER_CONSUMPTION, NUMBER_OF_SPEAKERS, FREQUENCY_RANGE, CORD_LENGTH
-    }
-
-    /**
-     * Private constructor to remove the ability of instantiating search criteria.
-     */
-    private SearchCriteria() {
     }
 }
 

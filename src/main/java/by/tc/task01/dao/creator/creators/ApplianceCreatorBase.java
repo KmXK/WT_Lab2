@@ -9,22 +9,6 @@ public abstract class ApplianceCreatorBase<T extends Appliance> implements Appli
     private static final String PRICE = "price";
 
     /**
-     * Creates new instance of type T.
-     *
-     * @return new instance of type T.
-     */
-    protected abstract T getInstance();
-
-    /**
-     * Sets the property value.
-     *
-     * @param entity instance of type T.
-     * @param key property name.
-     * @param value property value.
-     */
-    protected abstract void parse(T entity, String key, String value);
-
-    /**
      * {@inheritDoc}
      */
     @Override
@@ -36,13 +20,30 @@ public abstract class ApplianceCreatorBase<T extends Appliance> implements Appli
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 String key = node.getNodeName();
                 String text = node.getTextContent();
-                switch (key) {
-                    case PRICE -> entity.setPrice(Double.parseDouble(text));
-                    default -> parse(entity, key, text);
+                if (PRICE.equals(key)) {
+                    entity.setPrice(Double.parseDouble(text));
+                } else {
+                    parse(entity, key, text);
                 }
             }
         }
 
         return entity;
     }
+
+    /**
+     * Creates new instance of type T.
+     *
+     * @return new instance of type T.
+     */
+    protected abstract T getInstance();
+
+    /**
+     * Sets the property value.
+     *
+     * @param entity instance of type T.
+     * @param key    property name.
+     * @param value  property value.
+     */
+    protected abstract void parse(T entity, String key, String value);
 }

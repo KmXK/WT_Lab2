@@ -14,6 +14,15 @@ public final class ServiceFactory {
     }
 
     /**
+     * Gets the instance of a factory.
+     *
+     * @return instance of a factory.
+     */
+    public static ServiceFactory getInstance() {
+        return instance;
+    }
+
+    /**
      * Gets the appliance service.
      *
      * @return appliance service.
@@ -21,14 +30,5 @@ public final class ServiceFactory {
     public ApplianceService getApplianceService() {
 
         return applianceService;
-    }
-
-    /**
-     * Gets the instance of a factory.
-     *
-     * @return instance of a factory.
-     */
-    public static ServiceFactory getInstance() {
-        return instance;
     }
 }

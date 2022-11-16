@@ -14,20 +14,20 @@ public final class DAOFactory {
     }
 
     /**
-     * Gets the instance of appliance DAO
-     *
-     * @return instance of appliance DAO
-     */
-    public ApplianceDAO getApplianceDAO() {
-        return applianceDAO;
-    }
-
-    /**
      * Gets the instance of factory
      *
      * @return instance of factory
      */
     public static DAOFactory getInstance() {
         return instance;
+    }
+
+    /**
+     * Gets the instance of appliance DAO
+     *
+     * @return instance of appliance DAO
+     */
+    public ApplianceDAO getApplianceDAO() {
+        return applianceDAO;
     }
 }
