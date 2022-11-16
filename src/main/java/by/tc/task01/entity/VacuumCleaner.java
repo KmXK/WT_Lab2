@@ -7,17 +7,17 @@ import by.tc.task01.entity.enums.FilterType;
  * Represents the laptop appliance.
  */
 public class VacuumCleaner extends Appliance {
-    public int powerConsumption;
-    public FilterType filterType;
-    public String bagType;
-    public String wandType;
-    public int motorSpeedRegulation;
-    public int cleaningWidth;
+    private int powerConsumption;
+    private FilterType filterType;
+    private String bagType;
+    private String wandType;
+    private int motorSpeedRegulation;
+    private int cleaningWidth;
 
     @Override
     public String toString() {
-        return String.format("VacuumCleaner : PRICE=%.2f, POWER_CONSUMPTION=$d, FILTER_TYPE=%c, BAG_TYPE=%s, WAND_TYPE=%s, MOTOR_SPEED_REGULATION=%d, CLEANING_WIDTH=%d",
-                price, powerConsumption, filterType.toString(), bagType, wandType, motorSpeedRegulation, cleaningWidth);
+        return String.format("VacuumCleaner : PRICE=%.2f, POWER_CONSUMPTION=%d, FILTER_TYPE=%s, BAG_TYPE=%s, WAND_TYPE=%s, MOTOR_SPEED_REGULATION=%d, CLEANING_WIDTH=%d",
+                getPrice(), getPowerConsumption(), getFilterType().toString(), getBagType(), getWandType(), getMotorSpeedRegulation(), getCleaningWidth());
     }
 
     /**
@@ -26,13 +26,61 @@ public class VacuumCleaner extends Appliance {
     @Override
     public boolean matches(String key, Object value) {
         return switch (SearchCriteria.VacuumCleaner.valueOf(key)) {
-            case POWER_CONSUMPTION -> powerConsumption == (Integer) value;
-            case FILTER_TYPE -> filterType == FilterType.valueOf((String) value);
-            case BAG_TYPE -> bagType.equals(value);
-            case WAND_TYPE -> wandType.equals(value);
-            case MOTOR_SPEED_REGULATION -> motorSpeedRegulation == (Integer) value;
-            case CLEANING_WIDTH -> cleaningWidth == (Integer) value;
+            case POWER_CONSUMPTION -> getPowerConsumption() == (Integer) value;
+            case FILTER_TYPE -> getFilterType() == FilterType.valueOf((String) value);
+            case BAG_TYPE -> getBagType().equals(value);
+            case WAND_TYPE -> getWandType().equals(value);
+            case MOTOR_SPEED_REGULATION -> getMotorSpeedRegulation() == (Integer) value;
+            case CLEANING_WIDTH -> getCleaningWidth() == (Integer) value;
             default -> super.matches(key, value);
         };
+    }
+
+    public int getPowerConsumption() {
+        return powerConsumption;
+    }
+
+    public void setPowerConsumption(int powerConsumption) {
+        this.powerConsumption = powerConsumption;
+    }
+
+    public FilterType getFilterType() {
+        return filterType;
+    }
+
+    public void setFilterType(FilterType filterType) {
+        this.filterType = filterType;
+    }
+
+    public String getBagType() {
+        return bagType;
+    }
+
+    public void setBagType(String bagType) {
+        this.bagType = bagType;
+    }
+
+    public String getWandType() {
+        return wandType;
+    }
+
+    public void setWandType(String wandType) {
+        this.wandType = wandType;
+    }
+
+    public int getMotorSpeedRegulation() {
+        return motorSpeedRegulation;
+    }
+
+    public void setMotorSpeedRegulation(int motorSpeedRegulation) {
+        this.motorSpeedRegulation = motorSpeedRegulation;
+    }
+
+    public int getCleaningWidth() {
+        return cleaningWidth;
+    }
+
+    public void setCleaningWidth(int cleaningWidth) {
+        this.cleaningWidth = cleaningWidth;
     }
 }

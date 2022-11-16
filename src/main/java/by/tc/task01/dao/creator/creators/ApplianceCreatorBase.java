@@ -37,7 +37,7 @@ public abstract class ApplianceCreatorBase<T extends Appliance> implements Appli
                 String key = node.getNodeName();
                 String text = node.getTextContent();
                 switch (key) {
-                    case PRICE -> entity.price = Double.parseDouble(text);
+                    case PRICE -> entity.setPrice(Double.parseDouble(text));
                     default -> parse(entity, key, text);
                 }
             }

@@ -16,4 +16,11 @@ public interface ApplianceDAO {
      * @return array of appliances that match the criteria or null is criteria is invalid.
      */
     List<Appliance> find(Criteria criteria);
+
+    /**
+     * Finds all the appliances.
+     *
+     * @return array of all appliances.
+     */
+    List<Appliance> getAll();
 }

@@ -105,7 +105,7 @@
         <wandType>all-in-one</wandType>
         <motorSpeedRegulation>3000</motorSpeedRegulation>
         <cleaningWidth>20</cleaningWidth>
-        <price>40.5</price>
+        <price>1</price>
     </vacuumCleaner>
     <vacuumCleaner>
         <powerConsumption>110</powerConsumption>

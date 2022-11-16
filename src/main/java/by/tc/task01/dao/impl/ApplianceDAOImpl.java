@@ -78,4 +78,35 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         else
             return Collections.emptyList();
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<Appliance> getAll() {
+        List<Appliance> matches = new ArrayList<>();
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        try {
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(new File(RESOURCES_APPLIANCES_XML));
+            doc.getDocumentElement().normalize();
+            NodeList nodes = doc.getDocumentElement().getChildNodes();
+
+            for (int i = 0; i < nodes.getLength(); i++) {
+                Node node = nodes.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    ApplianceCreator ac = ApplianceCreatorFactory.getInstance().getCreator(node.getNodeName());
+                    Appliance appliance = ac.create(node.getChildNodes());
+                    matches.add(appliance);
+                }
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        if (matches.size() != 0)
+            return matches;
+        else
+            return Collections.emptyList();
+    }
 }

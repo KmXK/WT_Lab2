@@ -1,10 +1,6 @@
 package by.tc.task01.dao.creator.creators;
 
-import by.tc.task01.dao.creator.ApplianceCreator;
-import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.Laptop;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 /**
  * Represents creator of a laptop appliance.
@@ -31,12 +27,12 @@ public class LaptopCreator extends ApplianceCreatorBase<Laptop> {
     @Override
     protected void parse(Laptop entity, String key, String value) {
         switch (key) {
-            case BATTERY_CAPACITY -> entity.batteryCapacity = Double.parseDouble(value);
-            case OS -> entity.os = value;
-            case MEMORY_ROM -> entity.memoryRom = Integer.parseInt(value);
-            case SYSTEM_MEMORY -> entity.systemMemory = Integer.parseInt(value);
-            case CPU -> entity.cpu = Double.parseDouble(value);
-            case DISPLAY_INCHS -> entity.displayInches = Integer.parseInt(value);
+            case BATTERY_CAPACITY -> entity.setBatteryCapacity(Double.parseDouble(value));
+            case OS -> entity.setOs(value);
+            case MEMORY_ROM -> entity.setMemoryRom(Integer.parseInt(value));
+            case SYSTEM_MEMORY -> entity.setSystemMemory(Integer.parseInt(value));
+            case CPU -> entity.setCpu(Double.parseDouble(value));
+            case DISPLAY_INCHS -> entity.setDisplayInches(Integer.parseInt(value));
             default -> throw new IllegalArgumentException("Invalid appliance's attribute.");
         }
     }

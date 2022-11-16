@@ -7,6 +7,7 @@ import by.tc.task01.entity.criteria.SearchCriteria;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.ServiceFactory;
 
+import java.util.Comparator;
 import java.util.List;
 
 import static by.tc.task01.entity.criteria.SearchCriteria.Oven;
@@ -54,6 +55,12 @@ public class Main {
         appliances = service.find(criteriaOven);
 
         PrintApplianceInfo.print(appliances);
+
+        ////////////////////MINIMAL PRICE APPLIANCE////////////////////////////////
+
+        List<Appliance> minPriceAppliances = service.getMin(Comparator.comparing(Appliance::getPrice));
+
+        PrintApplianceInfo.print(minPriceAppliances);
 
     }
 

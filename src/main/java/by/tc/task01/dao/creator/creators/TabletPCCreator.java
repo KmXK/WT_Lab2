@@ -27,11 +27,11 @@ public class TabletPCCreator extends ApplianceCreatorBase<TabletPC> {
     @Override
     protected void parse(TabletPC entity, String key, String value) {
         switch (key) {
-            case BATTERY_CAPACITY -> entity.batteryCapacity = Integer.parseInt(value);
-            case DISPLAY_INCHES -> entity.displayInches = Integer.parseInt(value);
-            case MEMORY_ROM -> entity.memoryRom = Integer.parseInt(value);
-            case FLASH_MEMORY_CAPACITY -> entity.flashMemoryCapacity = Integer.parseInt(value);
-            case COLOR -> entity.color = ColorType.valueOf(value.toUpperCase());
+            case BATTERY_CAPACITY -> entity.setBatteryCapacity(Integer.parseInt(value));
+            case DISPLAY_INCHES -> entity.setDisplayInches(Integer.parseInt(value));
+            case MEMORY_ROM -> entity.setMemoryRom(Integer.parseInt(value));
+            case FLASH_MEMORY_CAPACITY -> entity.setFlashMemoryCapacity(Integer.parseInt(value));
+            case COLOR -> entity.setColor(ColorType.valueOf(value.toUpperCase()));
             default -> throw new IllegalArgumentException("Invalid appliance's attribute.");
         }
     }

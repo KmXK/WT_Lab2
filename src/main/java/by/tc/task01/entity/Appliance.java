@@ -6,7 +6,7 @@ import by.tc.task01.entity.criteria.SearchCriteria;
  * Represents a single object of appliance of the shop.
  */
 public abstract class Appliance {
-    public double price;
+    private double price;
 
     /**
      * Returns true if appliance matches the given search criteria.
@@ -18,7 +18,15 @@ public abstract class Appliance {
      */
     public boolean matches(String key, Object value) {
         return switch (SearchCriteria.Common.valueOf(key)) {
-            case PRICE -> price == Double.parseDouble(String.valueOf(value));
+            case PRICE -> getPrice() == Double.parseDouble(String.valueOf(value));
         };
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
